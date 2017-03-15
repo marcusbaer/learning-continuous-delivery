@@ -10,6 +10,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt",
+    "heroku-postbuild": "npm run build",
     "start": "nuxt start",
     "lint": "eslint --ext .js --ignore-path .gitignore .",
     "precommit": "npm run lint",
