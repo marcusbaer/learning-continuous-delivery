@@ -1,24 +1,20 @@
 image: node:boron
+
 services:
   - redis
 
+cache:
+  paths:
+    - node_modules/
+
 before_script:
-  - bundle install --jobs $(nproc)  "${FLAGS[@]}"
+  - yarn
+  - npm build
 
-after_script:
-  - rm secrets
-
-stages:
-  - build
-  - test
-  - deploy
-
-job1:
-  stage: build
+test_unit:
   script:
-    - yarn
-    - nuxt build
-  only:
-    - master
-  tags:
-    - docker
+    - npm test
+
+application:
+  script:
+    - npm start
