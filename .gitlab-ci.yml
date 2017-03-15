@@ -14,7 +14,7 @@ stages:
   - deploy
 
 variables:
-  - NODE_ENV: production
+  - "NODE_ENV": "production"
 
 job1:
   stage: build
