@@ -21,6 +21,7 @@ To deploy with Heroku some config is required.
 - About Gitlab environments: https://gitlab.com/help/ci/environments
 - About Gitlab variables: http://docs.gitlab.com/ee/ci/variables/README.html
 - Cycle analytics: https://gitlab.com/help/user/project/cycle_analytics.md
+- Integration with Slack: https://api.slack.com/incoming-webhooks
 - Deployment with AWS S3: https://about.gitlab.com/2016/08/26/ci-deployment-and-environments/
 
 Deployment with Gitlab job to AWS S3 requires these secret variables:
