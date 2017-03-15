@@ -3,19 +3,45 @@ stages:
   - build
   - deploy
 
+variables:
+  S3_FOLDER: "ci-app"
+
 test_unit:
   stage: test
-  script: echo "Testing the app"
+  script:
+    - npm test
 
 build:
   stage: build
-  script: echo "Building the app"
+  script:
+    - npm run build
 
-deploy_staging:
+deploy_to_production:
   stage: deploy
-  script: echo "Deploy to staging server"
+  image: node:boron
+  script:
+    - apt-get update
+    - apt-get -y install python-pip
+    - pip install awscli
+    - npm run generate
+    - aws s3 cp ./dist s3://$S3_BUCKET_NAME/$S3_FOLDER --recursive
   environment:
-    name: staging
-    url: https://staging.example.com
+    name: production
+    url: https://s3.amazonaws.com/$S3_BUCKET_NAME/$S3_FOLDER/index.html
   only:
+    - master
+
+pages:
+  stage: deploy
+  image: node:boron
+  script:
+    - npm run generate
+    - mkdir -p ./public
+    - cp -R ./dist ./public
+  environment:
+      name: staging
+  artifacts:
+    paths:
+    - public
+  except:
     - master

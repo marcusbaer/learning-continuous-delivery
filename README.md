@@ -18,6 +18,19 @@ To deploy with Heroku some config is required.
 
 # Deployment with Gitlab
 
-- Deployment with AWS S3: https://about.gitlab.com/2016/08/26/ci-deployment-and-environments/
 - About Gitlab environments: https://gitlab.com/help/ci/environments
+- About Gitlab variables: http://docs.gitlab.com/ee/ci/variables/README.html
 - Cycle analytics: https://gitlab.com/help/user/project/cycle_analytics.md
+- Deployment with AWS S3: https://about.gitlab.com/2016/08/26/ci-deployment-and-environments/
+
+Deployment with Gitlab job to AWS S3 requires these secret variables:
+
+- S3_BUCKET_NAME
+- AWS_ACCESS_KEY_ID
+- AWS_SECRET_ACCESS_KEY
+
+# Deployment with AWS S3
+
+    $ npm run generate
+    $ aws s3 cp ./dist s3://yourbucket/ --recursive
+    
