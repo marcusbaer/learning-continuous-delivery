@@ -1,0 +1,36 @@
+{
+  "name": "learning-continuous-delivery",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@git.pixelpark.com:marcus.baer/learning-continuous-delivery.git",
+  "author": "Marcus Baer <marcus.baer@publicispixelpark.de>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=7.6.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "lint": "eslint --ext .js --ignore-path .gitignore .",
+    "precommit": "npm run lint",
+    "test": "ava",
+    "ava": {
+      "require": [
+        "babel-register"
+      ]
+    },
+    "babel": {
+      "presets": [
+        "es2015"
+      ]
+    }
+  },
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.17.1",
+    "eslint-config-standard": "^7.0.1",
+    "eslint-plugin-html": "^2.0.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.1.1"
+  }
+}
