@@ -2,6 +2,12 @@
 
 Project demonstrates somewhat.
 
+# Deployments with Now.sh
+
+Run the following command:
+
+    $ now
+
 # Deployments with Heroku
 
 To deploy with Heroku some config is required. 
