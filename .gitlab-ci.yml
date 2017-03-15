@@ -1,13 +1,32 @@
-image: node:boron
+image: node:latest
 
 cache:
   paths:
     - node_modules/
 
+stages:
+  - test
+  - build
+  - deploy
+
 before_script:
   - yarn
-  - npm build
 
 test_unit:
+  stage: test
   script:
     - npm test
+
+build:
+  stage: build
+  script: echo "Building the app"
+
+deploy_staging:
+  stage: deploy
+  script:
+    - echo "Deploy to staging server"
+  environment:
+    name: staging
+    url: https://staging.example.com
+  only:
+    - master
