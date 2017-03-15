@@ -13,9 +13,6 @@ stages:
   - test
   - deploy
 
-variables:
-  - "NODE_ENV": "production"
-
 job1:
   stage: build
   script:
