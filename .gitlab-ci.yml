@@ -9,13 +9,9 @@ stages:
   - build
   - deploy
 
-before_script:
-  - yarn
-
 test_unit:
   stage: test
-  script:
-    - npm test
+  script: echo "Testing the app"
 
 build:
   stage: build
