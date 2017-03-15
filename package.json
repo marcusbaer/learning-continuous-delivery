@@ -1,7 +1,6 @@
 {
   "name": "learning-continuous-delivery",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "https://github.com/marcusbaer/learning-continuous-delivery.git",
   "author": "Marcus Baer",
   "license": "MIT",
