@@ -1,7 +1,16 @@
+build: .
+
 stages:
   - test
   - build
   - deploy
+
+before_script:
+  - yarn
+
+cache:
+  paths:
+    - node_modules
 
 variables:
   S3_FOLDER: "ci-app"
@@ -18,7 +27,6 @@ build:
 
 deploy_to_production:
   stage: deploy
-  image: node:boron
   script:
     - apt-get update
     - apt-get -y install python-pip
@@ -33,11 +41,10 @@ deploy_to_production:
 
 pages:
   stage: deploy
-  image: node:boron
   script:
     - npm run generate
     - mkdir -p ./public
-    - cp -R ./dist ./public
+    - cp -R ./dist/* ./public
   environment:
       name: staging
   artifacts:

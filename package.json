@@ -38,5 +38,10 @@
   },
   "dependencies": {
     "nuxt": "^0.9.9"
+  },
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0"
+    }
   }
 }
