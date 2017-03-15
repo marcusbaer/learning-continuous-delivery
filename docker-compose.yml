@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-  app:
+  web:
     build: .
     ports:
       - "3000" # dynamically set host port for scale

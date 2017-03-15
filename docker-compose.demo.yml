@@ -2,10 +2,7 @@ version: '2'
 
 services:
   web:
-    build: .
-    environment:
-      - NODE_ENV=production
-      - PORT=8080
+    image: dockercloud/hello-world
     ports:
       - 8080
     networks:
