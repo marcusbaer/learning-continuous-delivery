@@ -44,7 +44,7 @@ pages:
   script:
     - npm run generate
     - mkdir -p ./public
-    - cp -R ./dist ./public
+    - cp -R ./dist/* ./public
   environment:
       name: staging
   artifacts:
