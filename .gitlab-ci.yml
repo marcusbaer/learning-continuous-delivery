@@ -17,6 +17,7 @@ job1:
   stage: build
   script:
     - yarn
+    - nuxt build
   only:
     - master
   tags:

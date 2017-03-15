@@ -1,6 +1,8 @@
 .idea
 node_modules
 
+.nuxt
+dist
 .env
 .iml
 *.log
