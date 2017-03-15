@@ -1,4 +1,5 @@
 version: '2'
+
 services:
   app:
     build: .
@@ -6,10 +7,3 @@ services:
       - "3000" # dynamically set host port for scale
     environment:
       - NODE_ENV=production
-
-  haproxy:
-    image: haproxy:alpine
-    links:
-      - app
-    volumes:
-      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro

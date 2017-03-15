@@ -49,3 +49,4 @@ Deployment with Gitlab job to AWS S3 requires these secret variables:
 
 - https://www.brianchristner.io/how-to-scale-a-docker-container-with-docker-compose/
 - https://serversforhackers.com/load-balancing-with-haproxy
+- http://blog.hypriot.com/post/docker-compose-nodejs-haproxy/
