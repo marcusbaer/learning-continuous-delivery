@@ -1,8 +1,5 @@
 image: node:boron
 
-services:
-  - redis
-
 cache:
   paths:
     - node_modules/
@@ -14,7 +11,3 @@ before_script:
 test_unit:
   script:
     - npm test
-
-application:
-  script:
-    - npm start
