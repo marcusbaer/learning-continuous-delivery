@@ -32,7 +32,7 @@ deploy_to_production:
     - aws s3 cp ./dist s3://$S3_BUCKET_NAME/$S3_BUCKET_FOLDER --recursive
   environment:
     name: production
-    url: https://s3.amazonaws.com/$S3_BUCKET_NAME/$S3_FOLDER/index.html
+    url: https://s3.amazonaws.com/$S3_BUCKET_NAME/$S3_BUCKET_FOLDER/index.html
   only:
     - master
 

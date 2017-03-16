@@ -36,6 +36,7 @@ Read more about deployments with Gitlab here:
 Deployment with Gitlab job to AWS S3 requires these secret variables:
 
 - S3_BUCKET_NAME
+- S3_BUCKET_FOLDER
 - AWS_ACCESS_KEY_ID
 - AWS_SECRET_ACCESS_KEY
 - AWS_DEFAULT_REGION (optional)
