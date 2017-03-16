@@ -8,10 +8,6 @@ stages:
 before_script:
   - npm install
 
-cache:
-  paths:
-    - node_modules
-
 variables:
   S3_FOLDER: "ci-app"
 
