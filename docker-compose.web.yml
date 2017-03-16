@@ -2,7 +2,7 @@ version: '2'
 
 services:
   web:
-    build: ./docker/app
+    build: .
     ports:
       - "3000" # dynamically set host port for scale
     environment:
