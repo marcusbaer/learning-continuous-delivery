@@ -8,6 +8,10 @@ stages:
 before_script:
   - npm install
 
+cache:
+  paths:
+    - node_modules
+
 variables:
   S3_FOLDER: "ci-app"
 
@@ -43,6 +47,7 @@ pages:
     - cp -R ./dist/* ./public
   environment:
       name: staging
+      url: http://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME/
   artifacts:
     paths:
     - public
