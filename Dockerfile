@@ -1,25 +1,19 @@
-# NodeJS 6.9.0 LTS
 FROM node:alpine
 
 MAINTAINER Marcus Baer
 
 ENV PATH /root/.yarn/bin:$PATH
 
-RUN apk update \
-  && apk add --no-cache curl bash binutils tar \
-  && /bin/bash \
-  && touch ~/.bashrc \
-  && curl -o- -L https://yarnpkg.com/install.sh | bash
-
-RUN apk del curl tar binutils
-RUN apk add --no-cache make gcc g++
-
-RUN \
-    mkdir -p /aws && \
-    apk -Uuv add groff less python py-pip && \
-    pip install awscli && \
-    apk --purge -v del py-pip && \
-    rm /var/cache/apk/*
+# Install Yarn and AWS CLI
+RUN apk add --no-cache curl bash binutils tar \
+    && curl -o- -L https://yarnpkg.com/install.sh | bash \
+    && apk del curl tar binutils \
+    && apk add --no-cache make gcc g++ \
+    && mkdir -p /aws \
+    && apk -Uuv add groff less python py-pip \
+    && pip install awscli \
+    && apk --purge -v del py-pip \
+    && rm /var/cache/apk/*
 
 # Create app directory
 RUN mkdir -p /usr/src/app
