@@ -18,12 +18,12 @@ variables:
 test_unit:
   stage: test
   script:
-    - echo "Testing application"
+    - npm test
 
 build:
   stage: build
   script:
-    - echo "Building application"
+    - npm run build
 
 deploy_to_production:
   stage: deploy
